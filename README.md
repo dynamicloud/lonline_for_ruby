@@ -192,7 +192,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 
 1. Click on **Global Fields** link in your **Real time Dashboard**
 2. In the table of fields find the row with the identifier `lonlinelevel`
-3. Click on **Manage items** link.  A list of items will be shown, there click on **Add new** button and fill the value and text field
+3. Click on **Manage items** link.  An empty list of items will be shown, there click on **Add new** button and fill the value and text field
 4. The step number two should be executed six times according to the available levels (Fatal, Error, Warn, Info, Debug and Trace).
 
 
