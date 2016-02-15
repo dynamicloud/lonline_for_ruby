@@ -46,7 +46,7 @@ Lonline needs a basic settings to be configured, Lonline gem comes with a genera
 
 **config/lonline.yml**
 
-```yalm
+```yml
 test: &default
   # Credentials for REST APIs
   # Go to https://www.dynamicloud.org/manage and get the API keys available in your profile
@@ -170,9 +170,9 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 **We are going to explain step by step how to setup your account in Dynamicloud, trust us it's very easy:**
 
 1. Sign up in Dynamicloud (You can use either Google, Linkedin or Github account to speed up the registration)
-2. Click on **Add Field** link in your **Real time Dashboard**.  Here you need to add three fields:
+2. Click on **Add Field** link at your **Real time Dashboard**.  Here you need to add three fields:
   
-a. **Fields:**
+  a. **Fields:**
   
 | Field identifier | Field label | Field comments | Field type | Is a required field in form? |
 | --- | --- | --- | --- | --- |
@@ -193,17 +193,33 @@ a. **Fields:**
 
 **To add these options follow the steps below:**
 
-1. Click on **Global Fields** link in your **Real time Dashboard**
+1. Click on **Global Fields** link at your **Real time Dashboard**
 2. In the table of fields find the row with the identifier `lonlinelevel`
 3. Click on **Manage items** link.  An empty list of items will be shown, there click on **Add new** button and fill the value and text field
 4. The step number three should be executed six times according to the available levels (Fatal, Error, Warn, Info, Debug and Trace).
 
+  c. Add model
+  
+  A model is the cointainer of these fields, to add a model follow the the steps:
+  
+  1. Click on **Add model** link at your **Real time Dashboard**
+  2. Fill the mandatory field name and set a description (Optional)
+  3. Press button Create
+  4. In the list of Models the Model box has a header with the model Id, copy that Id and put it into the `lonline.yml` file 
+   
+```yml
+# This is the model identifier for test and development environment
+  # The model contains the structure to store logs into the cloud
+  # For more information about models in Dynamicloud visit https://www.dynamicloud.org/documents/mfdoc
+  model_identifier: 0
+```
+  
 ####The last step is to copy the API credentials (CSK and ACI keys) to put them in `lonline.yml` file.
 
 1. Click on **Your name link at right top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
 
-```yalm
+```yml
 # Credentials for REST APIs
 # Go to https://www.dynamicloud.org/manage and get the API keys available in your profile
 # If you don't have an account in Dynamicloud, visit https://www.dynamicloud.org/signupform
