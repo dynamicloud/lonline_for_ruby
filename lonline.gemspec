@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ['support@dynamicloud.com']
   spec.date = '2016-02-12'
 
-  spec.summary = %q{This gem allows you to log into the cloud using Dynamicloud.}
+  spec.summary = %q{This gem allows you to log your program into the cloud.}
   spec.description = %q{
     You will be able to execute the following operations:
     lonline.log.trace() -
@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
     lonline.log.warn() -
     lonline.log.error() -
     lonline.log.fatal() - Additionally, Lonline provides methods to get report about your logs.
-
   }
   spec.homepage = 'https://rubygems.org/gems/lonline'
   spec.license = 'MIT'
@@ -38,10 +37,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rails'
+  spec.add_development_dependency 'rails', '~> 1.0'
 
-  spec.add_runtime_dependency 'dynamicloud'
-  spec.add_runtime_dependency 'json'
+  spec.add_runtime_dependency 'dynamicloud', '~> 1.0'
+  spec.add_runtime_dependency 'json', '~> 1.0'
 end
