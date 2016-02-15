@@ -180,7 +180,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 | `lonlinelevel` | Log level | Contains the log level | Combobox | **Yes** |
 | `lonlinetrace` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
   
-  b. `lonlinelevel` is a combobox.  You need to add the following options:
+b. **`lonlinelevel` is a combobox.  You need to add the following options:**
   
 | Value | Text |
 | --- | --- |
@@ -198,14 +198,14 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 3. Click on **Manage items** link.  An empty list of items will be shown, there click on **Add new** button and fill the value and text field
 4. The step number three should be executed six times according to the available levels (Fatal, Error, Warn, Info, Debug and Trace).
 
-  c. Add model
+c. **Add model**
   
-  A model is the cointainer of these fields, to add a model follow the the steps:
-  
-  1. Click on **Add model** link at your **Real time Dashboard**
-  2. Fill the mandatory field name and set a description (Optional)
-  3. Press button Create
-  4. In the list of Models the Model box has a header with the model Id, copy that Id and put it in your `lonline.yml` file 
+A model is the cointainer of these fields, to add a model follow the the steps:
+
+1. Click on **Add model** link at your **Real time Dashboard**
+2. Fill the mandatory field name and set a description (Optional)
+3. Press button Create
+4. In the list of Models the Model box has a header with the model Id, copy that Id and put it in your `lonline.yml` file 
    
 ```yml
 # This is the model identifier for test and development environment
