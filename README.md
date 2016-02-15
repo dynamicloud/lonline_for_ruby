@@ -176,7 +176,8 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 | `lonlinetext` | Log text | Contains the trace of this log | Textarea | **Yes** |
 | `lonlinelevel` | Log level | Contains the log level | Combobox | **Yes** |
 | `lonlinelevel` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
-  2. lonlinelevel is a combobox, you need to add the follogin options:
+  
+  2. lonlinelevel is a combobox.  You need to add the following options:
   
 | Value | Text |
 | --- | --- |
