@@ -11,6 +11,8 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
 3. [Settings](#settings)
   1. [Dynamicloud account](#dynamicloud-account)
 4. [How to use](#how-to-use)
+  1. [Log using the six levels](#log-using-the-six-levels)
+  2. [Execute reports](#execute-reports)
  
 #Dependencies
 **Lonline has two main depedendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
@@ -212,6 +214,36 @@ aci: Enter your API_Client_Id
 
 At this moment you have the necessary to start to log your program into the cloud.
 
-
 #How to use
+Lonline is seasy to use, one line of code logs and stores into the cloud.
 
+###Log using the six levels
+
+```ruby
+Lonline.log.trace('Calling method Y')
+Lonline.log.debug('Creating new object')
+Lonline.log.info('Process has finished')
+Lonline.log.warn("It could'n create this object, the process will try later.")
+Lonline.log.error('Unable to load setting file')
+Lonline.log.fatal('The app has crashed and its state is unavailable')
+```
+
+###Execute reports
+
+```ruby
+Lonline::Report.fetch(:fatal, from, Time.now.utc) do |log|
+  puts log[:text] # Log you have sent
+  puts log[:when] # When this log was created
+  puts log[:trace] # Trace you have sent
+end
+
+from = Time.now
+from = Time.new(from.year, from.month, from.day, 0, 0, 0)
+
+# Count of fatal log from today at the beginning of the day.
+count = Lonline::Report.count(:fatal, from, Time.now.utc)
+
+puts "Count = #{count}"
+```
+
+For further information and support about lonline, contact us at [Contact](https://www.dynamicloud.org/contact "Dynamicloud contact")
