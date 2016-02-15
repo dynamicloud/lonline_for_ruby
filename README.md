@@ -195,7 +195,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 3. Click on **Manage items** link.  An empty list of items will be shown, there click on **Add new** button and fill the value and text field
 4. The step number three should be executed six times according to the available levels (Fatal, Error, Warn, Info, Debug and Trace).
 
-###The last step is to copy the API credentials (CSK and ACI keys) to put them in `lonline.yml` file.
+####The last step is to copy the API credentials (CSK and ACI keys) to put them in `lonline.yml` file.
 
 1. Click on **Your name link at right top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
