@@ -6,11 +6,22 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
 **This documentation has the following content:**
 
 1. [Settings](#settings)
-  1. [Dynamicloud account](#dynamicloud-account)
+  1. [Install gem](#install-gem)
+  2. [Dynamicloud account](#dynamicloud-account)
 2. [How to use](#how-to-use)
   1. [Log using the six levels](#log-using-the-six-levels)
   2. [Execute reports](#execute-reports)
- 
+
+#Install gem
+
+**To install gem from your command line:**
+
+`gem install lonline`
+
+**To add the gem to your Gemfile**
+
+`gem 'lonline'`
+
 #Settings
 Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializer could be within another initializer in your Rails app).
 
