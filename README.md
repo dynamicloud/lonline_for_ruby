@@ -244,6 +244,21 @@ Lonline.log.error('Unable to load setting file')
 Lonline.log.fatal('The app has crashed and its state is unavailable')
 ```
 
+###Additional data
+Lonline gem allows you to log further data.  If you want to log more information (For example: The module in your application who has executed the log.) just pass a hash with the attributes and values.  Remember that these additional attributes must match with the fields in your model, so you need to add these fields before to log.
+
+**To log additional information, follow the code below:**
+```ruby
+Lonline.log.trace('Calling method Y', 
+        {
+          :module => 'Financial module',
+          :user => 'eleazar',
+          :user_id => 454545
+        })
+```
+
+In the above example, you need to add three additional fields to your model, two of them as TextField and one as Number.
+
 ###Execute reports
 
 ```ruby
