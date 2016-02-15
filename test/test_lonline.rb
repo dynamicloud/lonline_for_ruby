@@ -11,12 +11,12 @@ class TestLonline < Test::Unit::TestCase
     logger = Logger.new(STDOUT)
     logger.level = Logger::DEBUG
 
-    Lonline::SETUP.logger = logger
+    #Lonline::SETUP.logger = logger
   end
 
   # Tests the four available methods for logging
   def test_lonline_levels
-    Lonline.log.trace('Calling method Y')
+    Lonline.log.trace('Calling method Y', {:lonlinemodule => 'Financial Module'})
     Lonline.log.debug('Creating new object')
     Lonline.log.info('Process has finished')
     Lonline.log.warn("It could'n create this object, the process will try later.")
@@ -30,15 +30,16 @@ class TestLonline < Test::Unit::TestCase
     from = Time.new(from.year, from.month, from.day, 0, 0, 0)
 
     index = 0
-    Lonline::Report.fetch(:fatal, from, Time.now.utc) do |log|
+    Lonline::Report.fetch(:trace, from, Time.now.utc) do |log|
       index = index + 1
 
       puts log[:text] # Log you have sent
       puts log[:when] # When this log was created
       puts log[:trace] # Trace you have sent
+      puts log[:lonlinemodule] # Additional information
     end
 
-    count = Lonline::Report.count(:fatal, from, Time.now.utc)
+    count = Lonline::Report.count(:trace, from, Time.now.utc)
     assert_equal count, index
   end
 end

@@ -22,7 +22,7 @@
 # This module provides methods to get the stored logs from your account in Dynamicloud.
 #
 # Lonline::Report executes queries provided from Dynamicloud library and will
-# fetch until 100 records by default, if you want to increase this set the number
+# fetch until 100 records by default, if you want to increase this, set the number
 # of records in report_limit (lonline.yml)
 #
 # Additionally, Lonline::Record provides a method to count how many logs were printed
@@ -52,6 +52,8 @@ require 'dynamic_api'
 require 'dynamic_criteria'
 
 module Lonline
+  # This module provides by default two methods fetch and count.  If you want to add your own reports, just
+  # add  the necessary methods to this module.
   module Report
     # This method counts the logs between a specific time according to 'from and to' params
     #
@@ -73,11 +75,19 @@ module Lonline
       results.records[0]['count'].to_i
     end
 
-    # This method fetches the logs according to level param and will be those created from date param.
+    # This method fetches the logs according to level param and will be those created between from and to params.
+    # The results are decrease ordered by creation.
     #
     # How to use:
     #
-    # Lonline::Report.fetch(:fatal, Time.new.utc - 2.days) do |report| # This call will fetch the fatal logs from 2 days ago
+    # Lonline::Report.fetch(:fatal, Time.new.utc - 2.days) do |report| # This call will fetch the fatal logs from 2 days ago (Rails app)
+    #   puts log[:text] # Log you have sent
+    #   puts log[:trace] # Trace you have sent
+    #   puts log[:when] # When this log was created
+    #   puts report['additional'] #This could be an additional field you have sent
+    # end
+    #
+    # Lonline::Report.fetch(:fatal, Time.new.utc) do |report| # This call will fetch the fatal logs from today
     #   puts log[:text] # Log you have sent
     #   puts log[:trace] # Trace you have sent
     #   puts log[:when] # When this log was created
@@ -89,13 +99,13 @@ module Lonline
       condition = Dynamicloud::API::Criteria::Conditions.and(Dynamicloud::API::Criteria::Conditions.equals('lonlinelevel', level.to_s),
                                                              Dynamicloud::API::Criteria::Conditions.between('added_at', from.strftime('%Y-%m-%d %T'),
                                                                                                             to.strftime('%Y-%m-%d %T')))
-      results = query.add(condition).get_results
+      results = query.order_by('id').desc.add(condition).get_results
 
       handle_results(query, block, results, results.fast_returned_size)
     end
 
     private
-    # returns the dynamicloud provider using the CSK and ACI provided from lonline.yml
+    # Returns the dynamicloud provider using the CSK and ACI provided from lonline.yml
     def self.get_provider
       Dynamicloud::API::DynamicProvider.new(
           {
@@ -114,6 +124,7 @@ module Lonline
         return
       end
 
+      # Dynamicloud provides the next method, this method automatically fetches the next set of logs.
       results = query.next
 
       if results.fast_returned_size > 0
