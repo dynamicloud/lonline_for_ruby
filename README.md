@@ -28,6 +28,10 @@ Install lonline like any other Ruby gem:
 
 `gem 'lonline'`
 
+and run at the command line:
+
+`bundle install`
+
 #Settings
 Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializer could be within another initializer in your Rails app).
 
