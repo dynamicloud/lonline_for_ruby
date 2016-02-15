@@ -63,7 +63,7 @@ test: &default
   async: false
   # Shows every warning like rejected request from Dynamicloud and other warnings in lonline
   warning: true
-  # Send the backtrace (the ordered method calls) of the log.  If you want to avoid this set to false
+  # Send the backtrace (the ordered method calls) of the log.  If you want to avoid this sets to false
   backtrace: true
   # This tag indicates the level of lonline
   # The following table is an explanation of levels in Lonline (Descriptions from the great Log4j library):
@@ -111,7 +111,7 @@ production:
   async: true
   # Shows every warning like rejected request from Dynamicloud
   warning: false
-  # Send the backtrace of the log.  If you want to avoid this set to false
+  # Send the backtrace of the log.  If you want to avoid this sets to false
   backtrace: true
   # This tag indicates the level of lonline
   # The following table is an explanation of levels in Lonline (Descriptions from the great Log4j library):
@@ -156,7 +156,7 @@ Lonline::SETUP.load('config/lonline.yml', Rails.env)
 Lonline::SETUP.logger = Rails.logger
 ```
 
-**For Ruby applications (No Rails) add this two lines of code to setup lonline:**
+**For Ruby applications (No Rails) add these two lines of code to setup lonline:**
 
 ```ruby
 Lonline::SETUP.load('test/lonline.yml', 'test')
