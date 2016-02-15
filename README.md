@@ -169,7 +169,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 
 1. Sign up in Dynamicloud (You can use either Google, Linkedin or Github account to speed up the registration)
 2. Click on **Add Field** link in your **Real time Dashboard**.  Here you need to add thread fields:
-  1. **Fields:**
+  a. **Fields:**
   
 | Field identifier | Field label | Field comments | Field type | Is a required field in form? |
 | --- | --- | --- | --- | --- |
@@ -177,7 +177,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 | `lonlinelevel` | Log level | Contains the log level | Combobox | **Yes** |
 | `lonlinelevel` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
   
-  2. `lonlinelevel` is a combobox.  You need to add the following options:
+  b. `lonlinelevel` is a combobox.  You need to add the following options:
   
 | Value | Text |
 | --- | --- |
