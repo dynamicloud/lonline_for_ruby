@@ -201,7 +201,17 @@ a. **Fields:**
 1. Click on **Your name link at right top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
 
+```yalm
+# Credentials for REST APIs
+# Go to https://www.dynamicloud.org/manage and get the API keys available in your profile
+# If you don't have an account in Dynamicloud, visit https://www.dynamicloud.org/signupform
+# You can easily use a social network to sign up
+csk: Enter your Client_Secret_Key
+aci: Enter your API_Client_Id
+```
+
 At this moment you have the necessary to start to log your program into the cloud.
+
 
 #How to use
 
