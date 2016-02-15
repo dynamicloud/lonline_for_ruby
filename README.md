@@ -205,16 +205,16 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
   1. Click on **Add model** link at your **Real time Dashboard**
   2. Fill the mandatory field name and set a description (Optional)
   3. Press button Create
-  4. In the list of Models the Model box has a header with the model Id, copy that Id and put it into the `lonline.yml` file 
+  4. In the list of Models the Model box has a header with the model Id, copy that Id and put it in your `lonline.yml` file 
    
 ```yml
 # This is the model identifier for test and development environment
-  # The model contains the structure to store logs into the cloud
-  # For more information about models in Dynamicloud visit https://www.dynamicloud.org/documents/mfdoc
-  model_identifier: 0
+# The model contains the structure to store logs into the cloud
+# For more information about models in Dynamicloud visit https://www.dynamicloud.org/documents/mfdoc
+model_identifier: 0
 ```
   
-####The last step is to copy the API credentials (CSK and ACI keys) to put them in `lonline.yml` file.
+####The last step is to copy the API credentials (CSK and ACI keys) to put them in your `lonline.yml` file.
 
 1. Click on **Your name link at right top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
