@@ -9,8 +9,8 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
   1. [Dynamicloud](#dynamicloud) 
 2. [Levels](#levels)
 3. [Settings](#settings)
-4. [Ruby generator](#ruby-generator)
-5. [How to use](#how-to-use)
+  1. [Dynamicloud account](#dynamicloud-account)
+4. [How to use](#how-to-use)
  
 #Dependencies
 **Lonline has two main depedendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
@@ -36,11 +36,11 @@ Lonline provides 6 levels of logging, check out the below table to understand ho
 #Settings
 Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializar could be within another initializer in your Rails app).
 
-**For Rails applications, execute the generator usign the following command:**
+**For Rails applications execute the generator in your command line as follow:**
 
 `rails g lonline`
 
-That command will create two files: config/lonline.yml and initializers/lonline.rb
+**That command will create two files:** `config/lonline.yml` and `initializer/lonline.rb`
 
 **config/lonline.yml**
 
@@ -142,7 +142,7 @@ production:
   report_limit: 100
 ```
 
-**initializers/lonline.rb.yml**
+**initializer/lonline.rb.yml**
 ```ruby
 Lonline::SETUP.load('config/lonline.yml', Rails.env)
 # The line below sets the logger you're using in your program, every call of lonline will execute the same method in your logger
@@ -158,6 +158,21 @@ Lonline::SETUP.logger = Rails.logger
 
 ```ruby
 Lonline::SETUP.load('test/lonline.yml', 'test')
-Lonline::SETUP.logger = logger #If you Ruby app have no logger then drop this line.
+Lonline::SETUP.logger = logger #If your Ruby app doesn't have logger remove this line.
 ```
+
+#Dynamicloud account
+
+Lonline needs API credentials from a Dynamicloud account, these credentials allow Lonline to access your account's structure (Model).  The mandatory model in your account should be composed for a model with at least three fields.  For further information about models and fields in Dynamicloud visit its documentation at [Models & Fields](https://www.dynamicloud.org/documents/mfdoc "Dynamicloud documentation")
+
+**We are going to explain step by step how to setup your account in Dynamicloud, trust us it's very easy:**
+
+1. Sign up in Dynamicloud (You can use either Google, Linkedin or Github account to speed up the registration)
+2. Press the Add Field link in your Real time Dashboard.  Here you need to add thread fields:
+| Field identifier | Field label | Field comments | Field type | Is a required field in form? |
+| --- | --- | --- | --- | --- |
+| `lonlinetext` | Log text| Contains the trace of this log | Textarea | Yes |  
+
+
+#How to use
 
