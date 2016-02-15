@@ -5,36 +5,12 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
 
 **This documentation has the following content:**
 
-1. [Dependencies](#dependencies)
-  1. [Dynamicloud](#dynamicloud) 
-2. [Levels](#levels)
-3. [Settings](#settings)
+1. [Settings](#settings)
   1. [Dynamicloud account](#dynamicloud-account)
-4. [How to use](#how-to-use)
+2. [How to use](#how-to-use)
   1. [Log using the six levels](#log-using-the-six-levels)
   2. [Execute reports](#execute-reports)
  
-#Dependencies
-**Lonline has two main depedendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
-
-#Dynamicloud
-Dynamicloud is a service to store data into the cloud, it allows you to create structures dynamically without intervention from IT teams.  This service allows lonline to store log information very easy and fast.  Additionally, lonline gets the power of Dynamicloud to execute queries and provide reports for your analysis about created logs in a specific time, date, year, etc.
-
-For further information about Dynamicloud visit its site [Dynamicloud](http://www.dynamicloud.org/ "Dynamicloud").
-
-#Levels
-Lonline provides 6 levels of logging, check out the below table to understand how these levels are activated according the level of logging in your program:
-
-| Level | Activated levels | Description (From the great Log4j library) |
-| --- | --- | --- |
-| `fatal` | Fatal | Designates very severe error events that will presumably lead the application to abort.|
-| `error` | Fatal, Error | Designates error events that might still allow the application to continue running.|
-| `warn` | Fatal, Error, Warn | Designates potentially harmful situations.|
-| `info` | Fatal, Error, Warn, Info | Designates informational messages that highlight the progress of the application at coarse-grained level.|
-| `debug` | Fatal, Error, Info, Warn, Debug | Designates fine-grained informational events that are most useful to debug an application.|
-| `trace` | All levels | Traces the code execution between methods, lines, etc.|
-| `off` | None | The highest possible rank and is intended to turn off logging.|
-
 #Settings
 Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializar could be within another initializer in your Rails app).
 
@@ -260,8 +236,10 @@ Lonline.log.trace('Calling method Y',
 In the above example, you need to add three additional fields to your model, two of them as TextField and one as Number.
 
 ###Execute reports
+Lonline allows you to execute reports about the executed logs and count how many logs have been created so far.
 
 ```ruby
+# These report fetchs the fatal logs from today.
 Lonline::Report.fetch(:fatal, from, Time.now.utc) do |log|
   puts log[:text] # Log you have sent
   puts log[:when] # When this log was created
@@ -271,7 +249,7 @@ end
 from = Time.now
 from = Time.new(from.year, from.month, from.day, 0, 0, 0)
 
-# Count of fatal log from today at the beginning of the day.
+# Count of fatal logs from today at the beginning of the day.
 count = Lonline::Report.count(:fatal, from, Time.now.utc)
 
 puts "Count = #{count}"
