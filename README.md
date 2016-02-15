@@ -30,5 +30,5 @@ Lonline provides 6 levels of logging, check out the below table to understand ho
 | `warn` | Fatal, Error, Warn | Designates potentially harmful situations.|
 | `info` | Fatal, Error, Warn, Info | Designates informational messages that highlight the progress of the application at coarse-grained level.|
 | `debug` | Fatal, Error, Info, Warn, Debug | Designates fine-grained informational events that are most useful to debug an application.|
-| `trace` | FatalAll levels | Traces the code execution between methods, lines, etc.|
+| `trace` | All levels | Traces the code execution between methods, lines, etc.|
 | `off` | None | The highest possible rank and is intended to turn off logging.|
