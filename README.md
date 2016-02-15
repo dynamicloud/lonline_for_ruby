@@ -250,7 +250,7 @@ In the above example, you need to add three additional fields to your model, two
 Lonline allows you to execute reports about the executed logs and count how many logs have been created so far.
 
 ```ruby
-# These report fetchs the fatal logs from today.
+# These report fetches the fatal logs from today.
 Lonline::Report.fetch(:fatal, from, Time.now.utc) do |log|
   puts log[:text] # Log you have sent
   puts log[:when] # When this log was created
