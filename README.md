@@ -168,7 +168,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 **We are going to explain step by step how to setup your account in Dynamicloud, trust us it's very easy:**
 
 1. Sign up in Dynamicloud (You can use either Google, Linkedin or Github account to speed up the registration)
-2. Press the Add Field link in your Real time Dashboard.  Here you need to add thread fields:
+2. Click on **Add Field** link in your **Real time Dashboard**.  Here you need to add thread fields:
   1. **Fields:**
   
 | Field identifier | Field label | Field comments | Field type | Is a required field in form? |
@@ -177,7 +177,7 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 | `lonlinelevel` | Log level | Contains the log level | Combobox | **Yes** |
 | `lonlinelevel` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
   
-  2. lonlinelevel is a combobox.  You need to add the following options:
+  2. `lonlinelevel` is a combobox.  You need to add the following options:
   
 | Value | Text |
 | --- | --- |
@@ -187,6 +187,15 @@ Lonline needs API credentials from a Dynamicloud account, these credentials allo
 | `Info` | Info |
 | `debug` | Debug |
 | `trace` | Trace |
+
+**To add these options follow the steps below:**
+
+1. Click on **Global Fields** link in your **Real time Dashboard**
+2. In the table of fields find the row with the identifier `lonlinelevel`
+3. Click on **Manage items** link.  A list of items will be shown, there click on **Add new** button and fill the value and text field
+4. The step number two should be executed six times according to the available levels (Fatal, Error, Warn, Info, Debug and Trace).
+
+
 
 #How to use
 
