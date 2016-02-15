@@ -12,9 +12,9 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
   2. [Execute reports](#execute-reports)
  
 #Settings
-Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializar could be within another initializer in your Rails app).
+Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializer could be within another initializer in your Rails app).
 
-**For Rails applications execute the generator in your command line as follow:**
+**For Rails applications execute the generator from your command line as follow:**
 
 `rails g lonline`
 
