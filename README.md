@@ -11,7 +11,8 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
   2. [Dynamicloud account](#dynamicloud-account)
 3. [How to use](#how-to-use)
   1. [Log using the six levels](#log-using-the-six-levels)
-  2. [Execute reports](#execute-reports)
+  2. [Additional data](#additional-data)
+  3. [Execute reports](#execute-reports)
 
 #Dependencies
 **Lonline has two main depedendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
