@@ -178,7 +178,7 @@ a. **Fields:**
 | --- | --- | --- | --- | --- |
 | `lonlinetext` | Log text | Contains the trace of this log | Textarea | **Yes** |
 | `lonlinelevel` | Log level | Contains the log level | Combobox | **Yes** |
-| `lonlinelevel` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
+| `lonlinetrace` | Complete Trace | Contains the complete trace of the log | Textarea | **No** |  
   
   b. `lonlinelevel` is a combobox.  You need to add the following options:
   
