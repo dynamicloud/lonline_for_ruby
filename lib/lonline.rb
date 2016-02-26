@@ -47,6 +47,7 @@
 #For further information, visit lonline's repository on https://github.com/dynamicloud/lonline_for_ruby
 
 require 'dynamic_api'
+require 'threadpool'
 require 'yaml'
 
 module Lonline
@@ -61,6 +62,8 @@ module Lonline
       :debug => 2,
       :trace => 1
   }
+
+  POOL = ThreadPool.new(3)
 
   # This class provides the four methods to log and send data to the cloud.
   class Log
@@ -176,14 +179,7 @@ module Lonline
         if Lonline::SETUP::SETTINGS[:config]['async']
           Lonline.warn_it 'Async mode'
 
-          t = schedule(trace)
-
-          # For test environment the async mode is disabled.
-          if Lonline::SETUP::SETTINGS[:config]['env'].eql?('test')
-            Lonline.warn_it 'For test environment, the async process is disabled'
-
-            t.join
-          end
+          schedule(trace)
         else
           Lonline.warn_it 'Sync mode'
           call_dynamicloud_service(trace)
@@ -192,7 +188,7 @@ module Lonline
     end
 
     def schedule(trace)
-      Thread.new {
+      POOL.process {
         call_dynamicloud_service(trace)
       }
     end
