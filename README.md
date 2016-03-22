@@ -213,7 +213,7 @@ model_identifier: 0
   
 ####The last step is to copy the API credentials (CSK and ACI keys) to put them in your `lonline.yml` file.
 
-1. Click on **Your name link at right top of your account**
+1. Click on **Your name link at left top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
 
 ```yml
