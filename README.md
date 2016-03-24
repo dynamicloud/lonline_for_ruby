@@ -15,7 +15,7 @@ Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline 
   3. [Execute reports](#execute-reports)
 
 #Dependencies
-**Lonline has two main depedendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
+**Lonline has two main dependendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
 
 #Installation
 Install lonline like any other Ruby gem:
