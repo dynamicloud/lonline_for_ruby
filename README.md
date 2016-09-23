@@ -225,7 +225,7 @@ csk: Enter your Client_Secret_Key
 aci: Enter your API_Client_Id
 ```
 
-At this moment you have the necessary to start to log your program into the cloud.
+At this point you have the necessary to start to log your program into the cloud.
 
 #How to use
 Lonline is easy to use, one line of code logs and stores into the cloud.
