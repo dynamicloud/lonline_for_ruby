@@ -141,7 +141,7 @@ production:
   report_limit: 100
 ```
 
-**initializer/lonline.rb.yml**
+**initializer/lonline.rb**
 ```ruby
 Lonline::SETUP.load('config/lonline.yml', Rails.env)
 # The line below sets the logger you're using in your program, every call of lonline will execute the same method in your logger
