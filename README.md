@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dynamicloud/lonline_for_ruby.svg?branch=master)](https://travis-ci.org/dynamicloud/lonline_for_ruby)
+
 # Lonline for Ruby
 Lonline allows you to log your program's execution into the cloud to avoid server access and disk space usage.
 
