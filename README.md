@@ -199,7 +199,7 @@ b. **`lonlinelevel` is a combobox.  You need to add the following options:**
 
 c. **Add model**
   
-A model is the cointainer of these fields, to add a model follow the next steps:
+A model is the container of these fields, to add a model follow the next steps:
 
 1. Click on **Add model** link at your **Real time Dashboard**
 2. Fill the mandatory field name and set a description (Optional)
