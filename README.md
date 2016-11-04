@@ -55,7 +55,7 @@ test: &default
   aci: Enter your API_Client_Id
   # This is the model identifier for test and development environment
   # The model contains the structure to store logs into the cloud
-  # For more information about models in Dynamicloud visit https://www.dynamicloud.org/documents/mfdoc
+  # For more information about models in Dynamicloud visit https://www.dynamicloud.org/documents/apidoc#main_concepts
   model_identifier: 0
   # async = true is the best choice to avoid impact in your app's execution.
   # If you want to wait for every request, set async: false
