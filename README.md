@@ -1,6 +1,11 @@
-[![Build Status](https://travis-ci.org/dynamicloud/lonline_for_ruby.svg?branch=master)](https://travis-ci.org/dynamicloud/lonline_for_ruby)
+![alt text](http://lonline.dynamicloud.org/assets/img/lonline-logo.png?rand=1 "Lonline logo")
 
-# Lonline for Ruby [![Gem Version](https://badge.fury.io/rb/lonline.svg)](https://badge.fury.io/rb/lonline)
+<hr>
+
+[![Build Status](https://travis-ci.org/dynamicloud/lonline_for_ruby.svg?branch=master)](https://travis-ci.org/dynamicloud/lonline_for_ruby)
+[![Gem Version](https://badge.fury.io/rb/lonline.svg)](https://badge.fury.io/rb/lonline)
+
+# For Ruby 
 Lonline allows you to log your program's execution into the cloud to avoid server access and disk space usage.
 
 Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline is a gem to log your program through a storing service called Dynamicloud.  With Dynamicloud we can store data dynamically and very easy, Lonline allows you to set more features and this way log more than only text, level and program trace.
