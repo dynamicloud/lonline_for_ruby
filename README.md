@@ -162,7 +162,7 @@ Lonline::SETUP.load('config/lonline.yml', Rails.env)
 # Lonline.log.fatal('The app has crashed and its state is unavailable') # This call will execute the following method in your logger
 # logger.fatal('The app has crashed and its state is unavailable') # If this method is unavailable, lonline
 # will catch the error without any feedback to you.
-# If you don't need this behaviour, remove this line.
+# If you don't need this behavior, remove this line.
 Lonline::SETUP.logger = Rails.logger
 ```
 
