@@ -10,7 +10,7 @@ Lonline allows you to log your program's execution into the cloud to avoid serve
 
 Lonline provides 6 levels of logging and 2 methods to execute reports.  Lonline is a gem to log your program through a storing service called Dynamicloud.  With Dynamicloud we can store data dynamically and very easy, Lonline allows you to set more features and this way log more than only text, level and program trace.
 
-#Lonline manager (Beta)
+# Lonline manager (Beta)
 
 This manager allows you to check your logs from anywhere, likewise you will be able to configure alerts, execute searchs, import and create containers, <a href="https://lonline.io/wizard" target="_blank">Configuration Wizard</a>, etc.
 
@@ -27,10 +27,10 @@ This manager allows you to check your logs from anywhere, likewise you will be a
   2. [Additional data](#additional-data)
   3. [Execute reports](#execute-reports)
 
-#Dependencies
+# Dependencies
 **Lonline has two main dependendencies:** Json gem and Dynamicloud gem, so when you're installing lonline gem those dependencies will be installed in your system.
 
-#Installation
+# Installation
 Install lonline like any other Ruby gem:
 
 **To install gem from your command line:**
@@ -45,7 +45,7 @@ and run at the command line:
 
 `bundle install`
 
-#Settings
+# Settings
 Lonline needs a basic settings to be configured, Lonline gem comes with a generator to create two main files: lonline.yml and an initializer called lonline.rb (The content of this initializer could be within another initializer in your Rails app).
 
 **For Rails applications execute the generator from your command line as follow:**
@@ -173,7 +173,7 @@ Lonline::SETUP.load('test/lonline.yml', 'test')
 Lonline::SETUP.logger = logger #If your Ruby app doesn't have logger remove this line.
 ```
 
-###Dynamicloud account
+### Dynamicloud account
 
 Lonline needs API credentials from a Dynamicloud account, these credentials allow Lonline to access your account's structure (Model).  The mandatory model in your account should be composed for a model with at least three fields.  For further information about models and fields in Dynamicloud visit its documentation at [Main concepts](https://www.dynamicloud.org/documents/apidoc#main_concepts "Dynamicloud documentation")
 
@@ -228,7 +228,7 @@ A model is the container of these fields, to add a model follow the next steps:
 model_identifier: 0
 ```
   
-####The last step is to copy the API credentials (CSK and ACI keys) to put them in your `lonline.yml` file.
+#### The last step is to copy the API credentials (CSK and ACI keys) to put them in your `lonline.yml` file.
 
 1. Click on **Your name link at left top of your account**
 2. Copy the CSK and ACI keys and put them into your `lonline.yml` file.
@@ -244,10 +244,10 @@ aci: Enter your API_Client_Id
 
 At this point you have the necessary to start to log your program into the cloud.
 
-#How to use
+# How to use
 Lonline is easy to use, one line of code logs and stores into the cloud.
 
-###Log using the six levels
+### Log using the six levels
 
 ```ruby
 Lonline.log.trace('Calling method Y')
@@ -258,7 +258,7 @@ Lonline.log.error('Unable to load setting file')
 Lonline.log.fatal('The app has crashed and its state is unavailable')
 ```
 
-###Additional data
+### Additional data
 Lonline gem allows you to log further data.  If you want to log more information (For example: The module in your application who has executed the log.) just pass a hash with the attributes and values.  Remember that these additional attributes must match with the fields in your model, so you need to add these fields before to log.
 
 **To log additional information, follow the code below:**
@@ -273,7 +273,7 @@ Lonline.log.trace('Calling method Y',
 
 In the above example, you need to add three additional fields to your model, two of them as TextField and one as Number.
 
-###Execute reports
+### Execute reports
 Lonline allows you to execute reports about the executed logs and count how many logs have been created so far.
 
 ```ruby
